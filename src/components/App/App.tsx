@@ -13,13 +13,17 @@ export default function App(props: any) {
       })
   }, [])
 
+  const handlePhotoClick = (image: any) => {
+    console.log(image);
+  }
+
   return (
     <div className="App">
       <header>
         <h1>App</h1>
       </header>
       <main>
-        <ImageGrid photos={photos} />
+        <ImageGrid photos={photos} handlePhotoClick={(image: any) => handlePhotoClick(image)} />
       </main>
     </div>
   );
