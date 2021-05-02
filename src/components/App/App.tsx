@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import ApiService from '../../services/api-services'
 import './App.css';
 
 export default function App(props: any) {
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
-
-  })
+    ApiService.getImages()
+      .then(imgs => {
+        let images = imgs.slice(0, 25);
+        setPhotos(images);
+      })
+  }, [])
 
   return (
     <div className="App">
