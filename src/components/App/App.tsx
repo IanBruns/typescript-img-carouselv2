@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ApiService from '../../services/api-services'
+import ImageGrid from '../ImageGrid/ImageGrid';
 import './App.css';
 
 export default function App(props: any) {
@@ -17,6 +18,9 @@ export default function App(props: any) {
       <header>
         <h1>App</h1>
       </header>
+      <main>
+        <ImageGrid photos={photos} />
+      </main>
     </div>
   );
 }
