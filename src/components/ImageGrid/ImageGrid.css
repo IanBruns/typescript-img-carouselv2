@@ -5,3 +5,7 @@
     grid-template-rows: repeat(5, 150px);
     grid-auto-flow: column;
 }
+
+.thumb {
+    cursor: pointer;
+}

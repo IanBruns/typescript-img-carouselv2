@@ -4,7 +4,7 @@ import './ImageGrid.css'
 export default function ImageGrid(props: any) {
 
     let propGrid = props.photos.map((img: any) => {
-        return <img key={img.id} src={img.thumbnailUrl} alt='' />
+        return <img className='thumb' key={img.id} src={img.thumbnailUrl} alt='' />
     })
 
     return (
