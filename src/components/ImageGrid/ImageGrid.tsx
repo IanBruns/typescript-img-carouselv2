@@ -10,7 +10,6 @@ export default function ImageGrid(props: any) {
 
     return (
         <React.Fragment>
-            <h2>Hi, mom!</h2>
             <div className='wrapper'>
                 {propGrid}
             </div>
