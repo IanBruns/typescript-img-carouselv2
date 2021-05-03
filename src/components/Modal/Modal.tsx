@@ -35,19 +35,21 @@ export default function Modal(props: any) {
     }
 
     return (
-        <div className='Modal'>
-            <h2>Modal</h2>
-            <img src={props.photo.url} alt='' />
-            <br />
-            <div>
-                {editing === true
-                    ? renderEditForm()
-                    : renderStaticDescription()}
-                <button onClick={() => setEditing(!editing)}>
-                    Add/Edit Description
+        <div className='backdrop' onClick={() => props.handleCloseClick()}>
+            <div className='Modal'>
+                <h2>Modal</h2>
+                <img src={props.photo.url} alt='' />
+                <br />
+                <div>
+                    {editing === true
+                        ? renderEditForm()
+                        : renderStaticDescription()}
+                    <button onClick={() => setEditing(!editing)}>
+                        Add/Edit Description
                 </button>
+                </div>
+                <button onClick={() => handleModalClose()}>Close</button>
             </div>
-            <button onClick={() => handleModalClose()}>Close</button>
         </div>
     )
 }
