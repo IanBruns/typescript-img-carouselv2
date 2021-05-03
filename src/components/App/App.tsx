@@ -12,6 +12,7 @@ export default function App(props: any) {
     ApiService.getImages()
       .then(imgs => {
         let images = imgs.slice(0, 25);
+        images.forEach((img: any) => img.description = '')
         setPhotos(images);
       })
   }, [])

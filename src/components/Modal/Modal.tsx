@@ -9,6 +9,7 @@ export default function Modal(props: any) {
         <div className='Modal'>
             <h2>Modal</h2>
             <img src={props.photo.url} alt='' />
+            <br />
             <button onClick={() => props.handleCloseClick()}>Close</button>
         </div>
     )
