@@ -21,6 +21,11 @@ export default function Modal(props: any) {
         return <p>{props.photo.description}</p>
     }
 
+    const handleModalClose = async () => {
+        await setEditing(false);
+        props.handleCloseClick();
+    }
+
     return (
         <div className='Modal'>
             <h2>Modal</h2>
@@ -34,7 +39,7 @@ export default function Modal(props: any) {
                     Add/Edit Description
                 </button>
             </div>
-            <button onClick={() => props.handleCloseClick()}>Close</button>
+            <button onClick={() => handleModalClose()}>Close</button>
         </div>
     )
 }
