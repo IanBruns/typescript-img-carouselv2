@@ -5,6 +5,9 @@ https://jsonplaceholder.typicode.com/photos
 
 Turn it into a 5x5 grid, and create a modal that displays the full photo and allows to add a description
 
+This is currently a desktop only application - will be working on making it more mobile friendly in the
+future
+
 ## To run
 
 Regardless of it you got this from a .zip or a gitHub, it's a simple npm i/npm start.  Node version 12.20.0

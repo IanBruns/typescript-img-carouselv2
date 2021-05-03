@@ -19,7 +19,7 @@ export default function Modal(props: any) {
         return (
             <form onSubmit={e => onSubmit(e)}>
                 <label htmlFor='desc'>Edit Description</label><br />
-                <input type='text' value={editDesc} onChange={e => setEditDesc(e.target.value)} /><br />
+                <input type='text' style={{ width: '370px' }} value={editDesc} onChange={e => setEditDesc(e.target.value)} /><br />
                 <button type='submit'>Submit</button>
             </form>
         )
