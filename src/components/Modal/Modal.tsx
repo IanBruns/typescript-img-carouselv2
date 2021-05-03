@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Modal.css';
 
 export default function Modal(props: any) {
     const [editing, setEditing] = useState(false);
