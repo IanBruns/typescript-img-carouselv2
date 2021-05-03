@@ -5,6 +5,7 @@ import Modal from '../Modal/Modal';
 import './App.css';
 
 export default function App(props: any) {
+  const [mainPhoto, setMainPhoto] = useState({})
   const [show, setShow] = useState(false);
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
@@ -16,7 +17,12 @@ export default function App(props: any) {
   }, [])
 
   const handlePhotoClick = (image: any) => {
-    console.log(image);
+    setMainPhoto(image);
+    setShow(true);
+  }
+
+  const handleCloseClick = () => {
+    setShow(false);
   }
 
   return (
@@ -25,7 +31,7 @@ export default function App(props: any) {
         <h1>App</h1>
       </header>
       <main>
-        <Modal />
+        <Modal show={show} handleCloseClick={handleCloseClick} photo={mainPhoto} />
         <ImageGrid photos={photos} handlePhotoClick={(image: any) => handlePhotoClick(image)} />
       </main>
     </div>
