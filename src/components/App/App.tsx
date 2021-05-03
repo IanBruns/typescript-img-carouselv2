@@ -37,6 +37,7 @@ export default function App(props: any) {
   }
 
   const updatePhotoDesc = (id: number, desc: string) => {
+    //Make a copy of the grid state, edit the one description, then change storage and state
     let holdPhotos: any = photos;
     holdPhotos[id - 1].description = desc;
     setPhotos(holdPhotos);
