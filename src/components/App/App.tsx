@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ApiService from '../../services/api-services'
 import ImageGrid from '../ImageGrid/ImageGrid';
 import Modal from '../Modal/Modal';
+import Photo from '../../types/Photo'
 import './App.css';
 
 export default function App(props: any) {
@@ -17,7 +18,7 @@ export default function App(props: any) {
       ApiService.getImages()
         .then(imgs => {
           let images = imgs.slice(0, 25);
-          images.forEach((img: any) => img.description = '');
+          images.forEach((img: Photo) => img.description = '');
           localStorage.setItem('grid', JSON.stringify(images));
           setPhotos(images);
         })
@@ -26,7 +27,7 @@ export default function App(props: any) {
     }
   }, [])
 
-  const handlePhotoClick = async (image: any) => {
+  const handlePhotoClick = async (image: Photo) => {
     await setMainPhoto(image);
     setShow(true);
   }

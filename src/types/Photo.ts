@@ -3,7 +3,7 @@ type Photo = {
     id: number;
     title: string;
     url: string;
-    thumbnailURL: string;
+    thumbnailUrl: string;
     description?: string | null;
 }
 
