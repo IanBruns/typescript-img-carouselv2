@@ -14,3 +14,7 @@
     display: flex;
     justify-content: center;
 }
+
+.Grid img {
+    border: 1px solid black;
+}
