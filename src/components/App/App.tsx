@@ -16,8 +16,8 @@ export default function App(props: any) {
       })
   }, [])
 
-  const handlePhotoClick = (image: any) => {
-    setMainPhoto(image);
+  const handlePhotoClick = async (image: any) => {
+    await setMainPhoto(image);
     setShow(true);
   }
 
