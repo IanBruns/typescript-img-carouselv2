@@ -3,13 +3,20 @@ import React, { useState } from 'react';
 export default function Modal(props: any) {
     const [editing, setEditing] = useState(false);
     const [editDesc, setEditDesc] = useState(props.photo.description);
+
     if (props.show === false) {
         return null;
     }
 
+    const onSubmit = (e: any) => {
+        e.preventDefault();
+        props.updatePhotoDesc(props.photo.id, editDesc);
+        setEditing(false);
+    }
+
     const renderEditForm = () => {
         return (
-            <form>
+            <form onSubmit={e => onSubmit(e)}>
                 <label htmlFor='desc'>Edit Description</label><br />
                 <input type='text' value={editDesc} onChange={e => setEditDesc(e.target.value)} /><br />
                 <button type='submit'>Submit</button>

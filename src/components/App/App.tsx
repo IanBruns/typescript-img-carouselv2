@@ -9,8 +9,10 @@ export default function App(props: any) {
   const [show, setShow] = useState(false);
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
+    //pulling item from local storage before calling to the api as to not overlap
     let store: any = localStorage.getItem('grid');
     store = JSON.parse(store);
+
     if (store === null) {
       ApiService.getImages()
         .then(imgs => {
@@ -33,13 +35,21 @@ export default function App(props: any) {
     setShow(false);
   }
 
+  const updatePhotoDesc = (id: number, desc: string) => {
+    let holdPhotos: any = photos;
+    holdPhotos[id - 1].description = desc;
+    setPhotos(holdPhotos);
+    localStorage.setItem('grid', JSON.stringify(holdPhotos));
+  }
+
   return (
     <div className="App">
       <header>
         <h1>App</h1>
       </header>
       <main>
-        <Modal show={show} handleCloseClick={handleCloseClick} photo={mainPhoto} />
+        <Modal show={show} photo={mainPhoto} handleCloseClick={handleCloseClick}
+          updatePhotoDesc={updatePhotoDesc} />
         <ImageGrid photos={photos} handlePhotoClick={(image: any) => handlePhotoClick(image)} />
       </main>
     </div>
