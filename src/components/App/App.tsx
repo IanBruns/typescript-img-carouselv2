@@ -46,7 +46,7 @@ export default function App(props: any) {
   return (
     <div className="App">
       <header>
-        <h1>App</h1>
+        <h1>Coding Challenge: By Ian</h1>
       </header>
       <main>
         <Modal show={show} photo={mainPhoto} handleCloseClick={handleCloseClick}
