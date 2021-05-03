@@ -45,8 +45,10 @@ export default function Modal(props: any) {
                         ? renderEditForm()
                         : renderStaticDescription()}
                     <button onClick={() => setEditing(!editing)}>
-                        Add/Edit Description
-                </button>
+                        {editing === true
+                            ? 'Cancel Edit'
+                            : 'Add / Edit Description'}
+                    </button>
                 </div>
                 <button onClick={() => handleModalClose()}>Close</button>
             </div>
