@@ -8,6 +8,7 @@
     z-index: 1;
     border-radius: 7px;
     padding: 10px;
+    text-align: center;
 }
 
 .backdrop {
@@ -18,4 +19,29 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.75);
     z-index: 50;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    width: 200px;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #A8BFB9;
+    width: 150px;
+    text-align: center;
+    margin-top: 10px;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
 }

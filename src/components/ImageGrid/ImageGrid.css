@@ -9,3 +9,9 @@
 .thumb {
     cursor: pointer;
 }
+
+.Grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
