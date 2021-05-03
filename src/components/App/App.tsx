@@ -9,12 +9,19 @@ export default function App(props: any) {
   const [show, setShow] = useState(false);
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
-    ApiService.getImages()
-      .then(imgs => {
-        let images = imgs.slice(0, 25);
-        images.forEach((img: any) => img.description = '')
-        setPhotos(images);
-      })
+    let store: any = localStorage.getItem('grid');
+    store = JSON.parse(store);
+    if (store === null) {
+      ApiService.getImages()
+        .then(imgs => {
+          let images = imgs.slice(0, 25);
+          images.forEach((img: any) => img.description = '');
+          localStorage.setItem('grid', JSON.stringify(images));
+          setPhotos(images);
+        })
+    } else {
+      setPhotos(store);
+    }
   }, [])
 
   const handlePhotoClick = async (image: any) => {
