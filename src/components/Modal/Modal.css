@@ -45,3 +45,7 @@ button {
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+
+.Modal img {
+    border: 1px solid black;
+}
