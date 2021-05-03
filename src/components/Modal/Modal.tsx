@@ -37,7 +37,7 @@ export default function Modal(props: any) {
     return (
         <div className='backdrop'>
             <div className='Modal'>
-                <h2>Modal</h2>
+                <h2>You Selected:</h2>
                 <img src={props.photo.url} alt='' />
                 <br />
                 <div>
