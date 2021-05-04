@@ -3,7 +3,7 @@
 The Challenge was to create a grid of images from an API:
 https://jsonplaceholder.typicode.com/photos
 
-Turn it into a 5x5 grid, and create a modal that displays the full photo and allows to add a description
+Turn it into a 5x5 grid, and create a modal that displays the full photo and allows a user to add a description
 
 This is currently a desktop only application - will be working on making it more mobile friendly in the
 future
@@ -13,6 +13,10 @@ future
 Regardless of it you got this from a .zip or a gitHub, it's a simple npm i/npm start.  Node version 12.20.0
 
 ## Application Screenshots
+
+![App](/src/screenshots/App.png)
+
+![Modal](src/screenshots/Modal.png)
 
 ## Technology Used
 
