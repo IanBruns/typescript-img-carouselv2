@@ -50,8 +50,9 @@ export default function App(props: any) {
         <h1>Coding Challenge: By Ian</h1>
       </header>
       <main>
-        <Modal show={show} photo={mainPhoto} handleCloseClick={handleCloseClick}
+        {show && <Modal photo={mainPhoto} handleCloseClick={handleCloseClick}
           updatePhotoDesc={updatePhotoDesc} />
+        }
         <ImageGrid photos={photos} handlePhotoClick={(image: any) => handlePhotoClick(image)} />
       </main>
     </div>
